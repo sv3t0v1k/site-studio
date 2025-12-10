@@ -1,65 +1,13 @@
-# Production Environment Variables for Noir Portfolio
-# Copy this file to .env.prod and fill in your actual values
-
-# ==========================================
-# DATABASE CONFIGURATION
-# ==========================================
+# Database
 DB_USER=noir_user
-DB_PASSWORD=your-secure-database-password-here
-# Database will be created automatically as noir_portfolio_prod
+DB_PASSWORD=secret_password
+DB_NAME=noir_db
 
-# ==========================================
-# APPLICATION CONFIGURATION
-# ==========================================
-APP_PORT=3000
+# App
 NEXTAUTH_URL=https://your-domain.com
+JWT_SECRET=super_secret_jwt_key
+ADMIN_EMAIL=admin@noir.com
+ADMIN_PASSWORD=admin123
 
-# ==========================================
-# SECURITY
-# ==========================================
-# Generate a secure random string for JWT
-# You can use: openssl rand -hex 32
-JWT_SECRET=your-production-jwt-secret-64-characters-minimum
-
-# ==========================================
-# ADMIN ACCOUNT
-# ==========================================
-ADMIN_EMAIL=admin@your-domain.com
-ADMIN_PASSWORD=your-secure-admin-password
-
-# ==========================================
-# EMAIL CONFIGURATION (Optional)
-# ==========================================
-# Leave empty if you don't want email notifications
-SMTP_HOST=
-SMTP_PORT=
-SMTP_USER=
-SMTP_PASS=
-SMTP_FROM=
-
-# ==========================================
-# GITHUB REPOSITORY (for Docker builds)
-# ==========================================
-# Format: username/repository-name
-GITHUB_REPOSITORY=your-github-username/noir-portfolio
-
-# ==========================================
-# SSL CERTIFICATES (for HTTPS)
-# ==========================================
-# Place your SSL certificates in ./ssl/ directory
-# cert.pem and key.pem files
-# Uncomment SSL server block in nginx.conf when ready
-
-# ==========================================
-# MONITORING & LOGGING
-# ==========================================
-# Add your monitoring service URLs here
-# SENTRY_DSN=
-# ANALYTICS_ID=
-
-# ==========================================
-# BACKUP CONFIGURATION
-# ==========================================
-# Automatic database backups (configure in cron)
-# BACKUP_SCHEDULE=daily
-# BACKUP_RETENTION=30
+# Node
+NODE_ENV=production
