@@ -69,10 +69,11 @@ sudo apt-get install -y nodejs
 
 # Clone repository
 echo -e "${BLUE}📥 Cloning repository...${NC}"
-cd /opt/noir-portfolio
+cd "$APP_DIR"
 if [ ! -d ".git" ]; then
-    git clone https://github.com/sv3t0v1k/site-studio.git .
-    echo -e "${YELLOW}⚠️  Please update the repository URL in this script with your actual GitHub repository.${NC}"
+    # Используем SSH для клонирования (требует настроенного SSH ключа)
+    git clone git@github.com:sv3t0v1k/site-studio.git .
+    echo -e "${GREEN}✅ Repository cloned successfully${NC}"
 else
     echo -e "${GREEN}✅ Repository already cloned${NC}"
 fi
