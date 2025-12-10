@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   db:
     image: postgres:15
@@ -21,7 +19,7 @@ services:
       retries: 3
 
   app:
-    image: ghcr.io/${GITHUB_REPOSITORY}:latest
+    image: ghcr.io/sv3t0v1k/site-studio:latest
     container_name: noir_portfolio_app_prod
     restart: unless-stopped
     environment:
