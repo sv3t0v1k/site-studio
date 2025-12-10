@@ -15,9 +15,9 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m' # No Color
 
-# Configuration
-APP_DIR="/opt/noir-portfolio"
-BACKUP_DIR="/opt/noir-portfolio-backups"
+# Configuration - use user's home directory
+APP_DIR="$HOME/noir-portfolio"
+BACKUP_DIR="$HOME/noir-portfolio-backups"
 TIMESTAMP=$(date +"%Y%m%d_%H%M%S")
 
 echo -e "${BLUE}📁 Application directory: ${APP_DIR}${NC}"

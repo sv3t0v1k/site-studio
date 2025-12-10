@@ -43,15 +43,16 @@ echo -e "${BLUE}👤 Adding user to docker group...${NC}"
 sudo usermod -aG docker $USER
 echo -e "${YELLOW}⚠️  You may need to log out and back in for docker group changes to take effect.${NC}"
 
-# Create application directory
+# Create application directory in user's home
 echo -e "${BLUE}📁 Creating application directory...${NC}"
-sudo mkdir -p /opt/noir-portfolio
-sudo chown -R $USER:$USER /opt/noir-portfolio
+APP_DIR="$HOME/noir-portfolio"
+BACKUP_DIR="$HOME/noir-portfolio-backups"
 
-# Create backup directory
-echo -e "${BLUE}💾 Creating backup directory...${NC}"
-sudo mkdir -p /opt/noir-portfolio-backups
-sudo chown -R $USER:$USER /opt/noir-portfolio-backups
+mkdir -p "$APP_DIR"
+mkdir -p "$BACKUP_DIR"
+
+echo -e "${GREEN}✅ Application directory: $APP_DIR${NC}"
+echo -e "${GREEN}✅ Backup directory: $BACKUP_DIR${NC}"
 
 # Configure firewall
 echo -e "${BLUE}🔥 Configuring firewall...${NC}"
@@ -102,8 +103,8 @@ Wants=network-online.target
 [Service]
 Type=oneshot
 User=$USER
-WorkingDirectory=/opt/noir-portfolio
-ExecStart=/opt/noir-portfolio/deploy.sh
+WorkingDirectory=$HOME/noir-portfolio
+ExecStart=$HOME/noir-portfolio/deploy.sh
 EOF
 
 sudo tee /etc/systemd/system/noir-portfolio-update.timer > /dev/null <<EOF
@@ -131,7 +132,7 @@ fi
 # Setup log rotation
 echo -e "${BLUE}📝 Setting up log rotation...${NC}"
 sudo tee /etc/logrotate.d/noir-portfolio > /dev/null <<EOF
-/opt/noir-portfolio/logs/*.log {
+$HOME/noir-portfolio/logs/*.log {
     daily
     missingok
     rotate 7
@@ -146,16 +147,16 @@ echo ""
 echo -e "${GREEN}🎉 Server setup completed!${NC}"
 echo ""
 echo -e "${YELLOW}📋 Next steps:${NC}"
-echo "1. Edit /opt/noir-portfolio/.env.prod with your production values"
+echo "1. Edit $HOME/noir-portfolio/.env.prod with your production values"
 echo "2. Update the GitHub repository URL in deploy.sh"
-echo "3. Run initial deployment: cd /opt/noir-portfolio && ./deploy.sh"
+echo "3. Run initial deployment: cd $HOME/noir-portfolio && ./deploy.sh"
 echo "4. Set up domain and SSL certificates if needed"
 echo "5. Configure monitoring and backups"
 echo ""
 echo -e "${BLUE}🔗 Useful commands:${NC}"
 echo "• View logs: docker-compose -f docker-compose.prod.yml logs -f"
 echo "• Restart: docker-compose -f docker-compose.prod.yml restart"
-echo "• Update: cd /opt/noir-portfolio && ./deploy.sh"
+echo "• Update: cd $HOME/noir-portfolio && ./deploy.sh"
 echo "• Backup: docker exec noir_portfolio_db_prod pg_dump -U noir_user noir_portfolio_prod > backup.sql"
 echo ""
 echo -e "${GREEN}🚀 Your Noir Portfolio server is ready for deployment!${NC}"
