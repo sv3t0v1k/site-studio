@@ -24,9 +24,14 @@ echo -e "${BLUE}📁 Application directory: ${APP_DIR}${NC}"
 echo -e "${BLUE}💾 Backup directory: ${BACKUP_DIR}${NC}"
 echo -e "${BLUE}🕐 Timestamp: ${TIMESTAMP}${NC}"
 
+# Change to application directory
+echo -e "${BLUE}📂 Changing to application directory...${NC}"
+cd "$APP_DIR"
+
 # Check if we're in the right directory
 if [ ! -f "docker-compose.prod.yml" ]; then
-    echo -e "${RED}❌ Error: docker-compose.prod.yml not found. Are you in the right directory?${NC}"
+    echo -e "${RED}❌ Error: docker-compose.prod.yml not found in ${APP_DIR}${NC}"
+    echo -e "${YELLOW}💡 Make sure the application is properly installed${NC}"
     exit 1
 fi
 
