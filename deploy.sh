@@ -50,7 +50,19 @@ fi
 
 # Pull latest changes from git
 echo -e "${BLUE}📥 Pulling latest changes from git...${NC}"
-git pull origin main
+if git pull origin main 2>/dev/null; then
+    echo -e "${GREEN}✅ Successfully pulled latest changes${NC}"
+else
+    echo -e "${YELLOW}⚠️  SSH connection failed, trying HTTPS...${NC}"
+    # Try with HTTPS if SSH fails
+    git remote set-url origin https://github.com/sv3t0v1k/site-studio.git
+    if git pull origin main; then
+        echo -e "${GREEN}✅ Successfully pulled via HTTPS${NC}"
+    else
+        echo -e "${YELLOW}⚠️  Git pull failed, continuing with current version${NC}"
+        echo -e "${BLUE}💡 You can manually update later with: git pull origin main${NC}"
+    fi
+fi
 
 # Check if .env.prod exists
 if [ ! -f ".env.prod" ]; then
