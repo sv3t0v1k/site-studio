@@ -71,7 +71,7 @@ sudo apt-get install -y nodejs
 echo -e "${BLUE}📥 Cloning repository...${NC}"
 cd /opt/noir-portfolio
 if [ ! -d ".git" ]; then
-    git clone https://github.com/YOUR_USERNAME/noir-portfolio.git .
+    git clone https://github.com/sv3t0v1k/site-studio.git .
     echo -e "${YELLOW}⚠️  Please update the repository URL in this script with your actual GitHub repository.${NC}"
 else
     echo -e "${GREEN}✅ Repository already cloned${NC}"
