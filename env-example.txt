@@ -1,0 +1,23 @@
+# Скопируйте этот файл как .env.local и настройте переменные окружения
+
+# Database
+DATABASE_URL="postgresql://username:password@localhost:5432/noir_portfolio"
+
+# JWT Secret (generate a secure random string)
+JWT_SECRET="your-super-secret-jwt-key-change-this-in-production"
+JWT_EXPIRES_IN="7d"
+
+# Email Configuration (optional)
+SMTP_HOST="smtp.gmail.com"
+SMTP_PORT="587"
+SMTP_SECURE="false"
+SMTP_USER="your-email@gmail.com"
+SMTP_PASS="your-app-password"
+SMTP_FROM="noreply@noir.com"
+
+# Admin Configuration
+ADMIN_EMAIL="admin@noir.com"
+ADMIN_PASSWORD="change-this-password"
+
+# Next.js
+NEXTAUTH_URL="http://localhost:3000"

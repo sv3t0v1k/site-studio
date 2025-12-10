@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Noir Portfolio - Demo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#ee4818',
+                        text: '#d5d5d5',
+                        heading: '#d5d5d5',
+                        subtitle: '#d5d5d5',
+                        lighter: '#f7f7f7',
+                        black: '#0F0F0F',
+                        background: '#000',
+                    },
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                        jakarta: ['Plus Jakarta Sans', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #000;
+            color: #d5d5d5;
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between h-20">
+                <div class="text-2xl font-bold text-primary">Noir</div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-text hover:text-primary transition-colors">Home</a>
+                    <a href="#services" class="text-text hover:text-primary transition-colors">Services</a>
+                    <a href="#projects" class="text-text hover:text-primary transition-colors">Projects</a>
+                    <a href="#about" class="text-text hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="text-text hover:text-primary transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center relative overflow-hidden pt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent"></div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left animate-fade-in">
+                    <img src="https://via.placeholder.com/150x150/333/fff?text=Photo" alt="Profile" class="rounded-full mx-auto lg:mx-0 mb-6">
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
+                        Freelance <br>
+                        <span class="text-primary">Fashion Designer</span>
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-2xl">
+                        Hi, I'm Enna, a passionate UX Designer dedicated to creating user-friendly digital experiences.
+                    </p>
+                    <a href="#contact" class="inline-block bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                        Get In Touch
+                    </a>
+                </div>
+                <div class="hidden lg:block animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="flex flex-wrap justify-center gap-6 opacity-60">
+                        <div class="w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center text-xs">Client</div>
+                        <div class="w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center text-xs">Client</div>
+                        <div class="w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center text-xs">Client</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Services</h2>
+                <p class="text-gray-400 text-lg">Comprehensive design solutions</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="group bg-black p-8 rounded-lg border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black font-bold text-lg">01</div>
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-palette-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Brand Identity Design</h3>
+                    <p class="text-gray-400">Blend of strategic thinking and creative flair to craft a digital identity that resonates.</p>
+                </div>
+
+                <div class="group bg-black p-8 rounded-lg border border-gray-800 hover:border-primary/50 transition-colors">
+                    <div class="absolute -top-4 -left-4 w-12 h-12 bg-primary rounded-full flex items-center justify-center text-black font-bold text-lg">02</div>
+                    <div class="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mb-6">
+                        <i class="ri-brush-line text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-4 group-hover:text-primary transition-colors">Visual Design</h3>
+                    <p class="text-gray-400">Blend of artistic intuition with strategic insight to craft a visual identity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Recent Work</h2>
+                <p class="text-gray-400 text-lg">Explore my latest projects</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-lg bg-gray-900">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Project+1" alt="Project" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-primary/90 text-white text-sm font-medium rounded-full">Branding</span>
+                        </div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors">View Project</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">Glasses of Cocktail</h3>
+                        <p class="text-gray-400 text-sm line-clamp-2">A premium branding project for a cocktail lounge featuring elegant glassware design.</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">React</span>
+                            <span class="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg bg-gray-900">
+                    <div class="aspect-video bg-gray-800 relative overflow-hidden">
+                        <img src="https://via.placeholder.com/400x300/333/fff?text=Project+2" alt="Project" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110">
+                        <div class="absolute top-4 left-4">
+                            <span class="px-3 py-1 bg-primary/90 text-white text-sm font-medium rounded-full">Mockup</span>
+                        </div>
+                        <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <button class="px-6 py-3 bg-primary hover:bg-primary/90 text-white rounded-lg font-medium transition-colors">View Project</button>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-white mb-3 group-hover:text-primary transition-colors">A Branch with Flowers</h3>
+                        <p class="text-gray-400 text-sm line-clamp-2">Nature-inspired design project showcasing floral arrangements.</p>
+                        <div class="flex gap-2 mt-4">
+                            <span class="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Figma</span>
+                            <span class="px-2 py-1 bg-gray-800 text-gray-300 text-xs rounded">Illustrator</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">About Me</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                <img src="https://via.placeholder.com/500x600/333/fff?text=About+Photo" alt="About" class="rounded-lg w-full h-auto">
+
+                <div>
+                    <h3 class="text-3xl font-bold text-white mb-6">I'm Noir Enna, a seasoned UX Designer</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                        I'm Noir Enna, a seasoned UX designer with over 8 years of experience in crafting intuitive digital experiences.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-6 mb-8">
+                        <div class="text-center">
+                            <div class="text-4xl font-bold text-primary mb-2">8</div>
+                            <p class="text-gray-400 text-sm">Years Of Experience</p>
+                        </div>
+                        <div class="text-4xl font-bold text-primary mb-2">100+</div>
+                        <div class="text-4xl font-bold text-primary mb-2">90%</div>
+                    </div>
+
+                    <div class="space-y-4">
+                        <h4 class="text-xl font-semibold text-white mb-4">Expertise</h4>
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <span class="text-gray-300">User Research</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                <span className="text-gray-300">UI/UX Design</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-black">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">Contact Me</h2>
+                <p class="text-gray-400 text-lg">Ready to bring your ideas to life</p>
+            </div>
+
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <div>
+                    <div class="mb-8">
+                        <img src="https://via.placeholder.com/400x400/333/fff?text=Contact+Photo" alt="Contact" class="rounded-lg w-full h-auto mb-6">
+                        <h3 class="text-2xl font-bold text-white mb-4">Elevate Your Brand experience to the next level</h3>
+                        <p class="text-gray-400 text-lg">Hi, I'm Enna, a passionate UX Designer dedicated to creating user-friendly digital experiences.</p>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                                <i class="ri-mail-line text-xl text-primary"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm">Email</p>
+                                <a href="mailto:hello@noir.com" class="text-white hover:text-primary transition-colors">hello@noir.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <form class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <input type="text" placeholder="Your Name" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
+                            <input type="email" placeholder="Your Email" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
+                        </div>
+                        <input type="text" placeholder="Subject" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors">
+                        <textarea rows="6" placeholder="Your Message" class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:border-primary transition-colors resize-none"></textarea>
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-4 px-6 rounded-lg transition-colors flex items-center justify-center space-x-2">
+                            <span>Send Message</span>
+                            <i class="ri-mail-line"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-white/10 py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-2xl font-bold text-primary mb-4">Have a project in mind?</h3>
+                    <a href="mailto:hello@noir.com" class="text-4xl md:text-6xl font-bold text-white hover:text-primary transition-colors block mb-6">hello@noir.com</a>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-semibold mb-4">Quick Links</h4>
+                    <div class="space-y-2">
+                        <a href="#home" class="block text-gray-400 hover:text-primary transition-colors">Home</a>
+                        <a href="#services" class="block text-gray-400 hover:text-primary transition-colors">Services</a>
+                        <a href="#projects" class="block text-gray-400 hover:text-primary transition-colors">Projects</a>
+                        <a href="#about" class="block text-gray-400 hover:text-primary transition-colors">About</a>
+                        <a href="#contact" class="block text-gray-400 hover:text-primary transition-colors">Contact</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">© 2024 Noir Portfolio. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Privacy</a>
+                    <a href="#" class="text-gray-400 hover:text-primary transition-colors text-sm">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <button class="fixed bottom-8 right-8 z-40 w-12 h-12 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center text-white shadow-lg transition-colors opacity-0" id="scrollTop">
+        <i class="ri-arrow-up-line"></i>
+    </button>
+
+    <script>
+        // Scroll to Top functionality
+        const scrollTopBtn = document.getElementById('scrollTop')
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.remove('opacity-0')
+            } else {
+                scrollTopBtn.classList.add('opacity-0')
+            }
+        })
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+        })
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault()
+                const target = document.querySelector(this.getAttribute('href'))
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+            })
+        })
+    </script>
+</body>
+</html>
